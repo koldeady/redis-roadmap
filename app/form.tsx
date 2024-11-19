@@ -1,6 +1,20 @@
+// form.tsx
 import React from "react";
 
-const Form: React.FC = () => {  // Đảm bảo khai báo với kiểu React.FC
+type Feature = {
+  score: string;
+  created_at: string;
+  id: string;
+  title: string;
+};
+
+const Form = () => {
+  // Dữ liệu giả lập cho features
+  const features: Feature[] = [
+    { score: "95", created_at: "2024-01-01", id: "1", title: "Feature 1" },
+    { score: "88", created_at: "2024-02-01", id: "2", title: "Feature 2" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
@@ -91,6 +105,21 @@ const Form: React.FC = () => {  // Đảm bảo khai báo với kiểu React.FC
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      {/* Feature Section */}
+      <section className="container mx-auto py-10">
+        <h3 className="text-2xl font-bold mb-4">Feature List</h3>
+        <div className="flex flex-wrap items-center justify-around max-w-4xl my-8 sm:w-full bg-white rounded-md shadow-xl h-full border border-gray-100">
+          {/* Component hiển thị danh sách features */}
+          {features.map((feature) => (
+            <div key={feature.id} className="p-4 border-b">
+              <h4 className="text-xl font-semibold">{feature.title}</h4>
+              <p>Score: {feature.score}</p>
+              <p>Created at: {feature.created_at}</p>
+            </div>
+          ))}
         </div>
       </section>
 
