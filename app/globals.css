@@ -9,4 +9,5 @@ body {
 input {
   /** Remove shadow on Safari iOS */
   -webkit-appearance: none;
+  appearance: none;
 }
