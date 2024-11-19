@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const Form: React.FC = () => {  // Đảm bảo khai báo với kiểu React.FC
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navbar */}
